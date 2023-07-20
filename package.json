@@ -19,5 +19,9 @@
     "xlsx"
   ],
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:chanxystar/excel-react-hooks.git"
+  }
 }

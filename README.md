@@ -18,10 +18,11 @@ const { reader, data } = useReader(
 ```html
 <input type="file"
         onChange={(e)=>{
-          reader.readAsArrayBuffer(e.target.files![0])
+          reader.readAsArrayBuffer(e.target.files[0])
         }}
       />
 ```
+
 ```javascript
   useEffect(()=>{
     console.log(data)
