@@ -4,18 +4,19 @@
     "xlsx": "^0.18.5"
   },
   "name": "excel-react-hooks",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-	"keywords": [
-		"react",
-		"hooks",
-		"excel",
-		"xlsx"],
+  "keywords": [
+    "react",
+    "hooks",
+    "excel",
+    "xlsx"
+  ],
   "license": "ISC",
   "description": ""
 }
