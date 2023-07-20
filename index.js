@@ -1,5 +1,7 @@
 import useReader from "./src/useReader";
 
-export default {
-  useReader,
-};
+
+const excelHooks = {
+  useReader
+}
+export default excelHooks
