@@ -6,11 +6,12 @@
   "name": "excel-react-hooks",
   "version": "1.0.1",
   "main": "index.js",
+  "types": "index.d.ts",
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "chanxy",
   "keywords": [
     "react",
     "hooks",
