@@ -2,27 +2,36 @@ import { useState } from "react";
 
 /**
  *  @description 读取excel文件hook
- *  @param {number} colCount excel文件的列数
- *  @param {function} success 读取成功的回调
+ *  @param {string[]} colKeys excel文件的列的key数组
+ *  @param {function} success 读取成功的回调   
  *  @param {function} error 读取失败的回调
- *  @returns  {object} reader:FileReader对象，data:读取的数据
+ *  @returns  {object} reader:FileReader对象，data:读取的数据  
+ * \\
  * */
-export default function useReader(colCount, success, error) {
+export default function useReader(colKeys, success, error) {
   const reader = new FileReader();
   const [data, setData] = useState([]);
 
   //处理数据
   const handleData = (result) => {
     //进行数据格式校验
-    if (result[0].length !== colCount) {
-      message.error(`文件的列数不正确，应该是${colCount}列`);
+    if (result[0].length !== colKeys.length) {
+      message.error(`文件的列数不正确，应该是${colKeys.length}列`);
       error();
       return;
     }
     //去掉表头
     result.shift();
+    const resArr  = []
+    for(let i = 0; i < result.length; i++){
+      const obj = {}
+      for(let j = 0; j < result[i].length; j++){
+        obj[colKeys[j]] = result[i][j]
+      }
+      resArr.push(obj)
+    }
     //储存数据
-    setData(result);
+    setData(resArr);
     success();
   };
   //挂载回调
